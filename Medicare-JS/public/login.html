@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare - Login/Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="card" id="loginCard">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUser" placeholder="Username" required>
+            <input type="password" id="loginPass" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <h2><a href="#" id="showRegister">Register</a></h2>
+    </div>
+
+    <div class="card" id="registerCard" style="display: none;">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" id="regUser" placeholder="Username" required>
+            <input type="password" id="regPass" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <h2><a href="#" id="showLogin">Login</a></h2>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

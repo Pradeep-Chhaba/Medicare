@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="card" id="dashboardCard">
+        <h2>Dashboard</h2>
+        <section class="card">
+            <h2 id="welcomeMsg">Welcome 👋</h2>
+            
+        </section>
+        <button id="showAddBtn">Add Medicine</button>
+        <button id="showViewBtn">View Medicines</button>
+        <button id="showCaregiverBtn">Caregiver Monitoring</button>
+        <button id="showReportsBtn">Reports & History</button>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="card" id="addMedicineCard" style="display: none;">
+        <h2>Add Medicine</h2>
+        <form id="addMedicineForm">
+            <input type="text" id="medName" placeholder="Medicine Name" required>
+            <input type="text" id="medDosage" placeholder="Dosage" required>
+            <input type="time" id="medTime" required>
+            <input type="date" id="medExpiry" required>
+            <button type="submit">Save</button>
+        </form>
+        <button class="backBtn" style="background:#4b5563; box-shadow:none;">Back to Dashboard</button>
+    </div>
+
+    <div class="card" id="viewMedicineCard" style="display: none;">
+        <h2>Your Medicines</h2>
+        <div id="medicinesList">
+            <!-- Rendered by JS -->
+        </div>
+        <button class="backBtn" style="background:#4b5563; box-shadow:none;">Back to Dashboard</button>
+    </div>
+
+    <div class="card" id="caregiverCard" style="display: none;">
+        <h2>Caregiver Monitoring</h2>
+        <div id="adherenceStatus">
+            <!-- Rendered by JS -->
+        </div>
+        <button class="backBtn" style="background:#4b5563; box-shadow:none;">Back to Dashboard</button>
+    </div>
+
+    <div class="card" id="reportsCard" style="display: none;">
+        <h2>Reports & History</h2>
+        <div id="historyList">
+            <!-- Rendered by JS -->
+        </div>
+        <button class="backBtn" style="background:#4b5563; box-shadow:none;">Back to Dashboard</button>
+    </div>
+
+    <!-- Reminder Notification Popup -->
+    <div id="reminderPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: flex-start; justify-content: center;">
+        <div class="card" style="margin-top: 20%; max-width: 400px; text-align: center; background: #fff;">
+            <h2 id="reminderMedName">Time to take Medicine!</h2>
+            <p>It is time to take your scheduled dose.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <button id="btnTaken" style="background: #28a745; width: auto;">Taken</button>
+                <button id="btnMissed" style="background: #dc3545; width: auto;">Missed</button>
+            </div>
+            <button id="btnDismissPopup" style="background: #6c757d; margin-top: 10px; box-shadow: none;">Dismiss</button>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
